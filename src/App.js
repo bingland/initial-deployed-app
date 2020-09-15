@@ -21,7 +21,7 @@ export class App extends Component {
 
   // Get JSON data dynamically
   componentDidMount = () => {
-    fetch('/json/dictionary.json', {mode: 'no-cors'})
+    fetch('https://initialdeployedapp.netlify.app/json/dictionary.json', {mode: 'no-cors'})
       .then(response => response.json())
       .then(data => {
         this.setState({data: data})
