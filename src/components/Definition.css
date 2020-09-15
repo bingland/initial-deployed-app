@@ -1,0 +1,16 @@
+.defBox {
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.18);
+    padding: 20px;
+}
+
+.defBox h1 {
+    margin: 5px 0;
+    font-size: 50px;
+}
+
+.defBox p {
+    line-height: 1.3;
+}
