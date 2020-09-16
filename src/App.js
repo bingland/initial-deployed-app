@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
+import dic from './json/dictionary.json'
 
 import Title from './components/Title'
 import Search from './components/Search'
@@ -10,23 +11,13 @@ export class App extends Component {
   state = {
     query: '',
     oldQuery: '', 
-    data: {},
+    data: dic,
     autolist: [],
     cursor: -1,
     definition: {
       word: '',
       desc: ''
     }
-  }
-
-  // Get JSON data dynamically
-  componentDidMount = () => {
-    fetch('https://initialdeployedapp.netlify.app/json/dictionary.json', {mode: 'no-cors'})
-      .then(response => response.json())
-      .then(data => {
-        this.setState({data: data})
-      })
-      .catch(error => console.error(error))
   }
 
   searchDic = (e) => {
