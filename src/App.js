@@ -8,6 +8,12 @@ import Definition from './components/Definition'
 
 export class App extends Component {
 
+  // remove loading icon from the dom
+  componentDidMount() {
+    document.querySelector('#loading').remove()
+  }
+
+
   state = {
     query: '',
     oldQuery: '', 
