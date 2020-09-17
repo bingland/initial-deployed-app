@@ -13,7 +13,6 @@ export class App extends Component {
     document.querySelector('#loading').remove()
   }
 
-
   state = {
     query: '',
     oldQuery: '', 
@@ -38,7 +37,6 @@ export class App extends Component {
   }
 
   changeHandler = (e) => {
-    console.log('Changed the value!')
     this.setState({
       query: e.target.value,
       oldQuery: e.target.value,
@@ -48,13 +46,11 @@ export class App extends Component {
 
   // when user focuses into the textbox / automatic suggestions
   focusHandler = () => {
-    console.log('focus!')
     // search for list of 5 words that match value
     let matches = []
 
     for (let key in this.state.data) {
       if (key.includes(this.state.query.toLowerCase()) && key.substr(0, this.state.query.length) === this.state.query.toLowerCase() && this.state.query.toLowerCase() !== '' && matches.length <= 5) {
-        console.log('bingo! 2')
         matches.push(key)
       }
     }
@@ -101,9 +97,12 @@ export class App extends Component {
   }
 
   // when user selects / highlights an autofill suggestion
-  selectHandler = (e) => {
-    console.log(e.target.value)
-    console.log('SDKFJSLKDFJDSKLFJLSJDFLK')
+  selectHandler = (item) => {
+    this.setState({query: item, oldQuery: item})
+  }
+
+  hoverHandler = (e) => {
+    console.log('hover?')
   }
 
   render() {
@@ -129,6 +128,7 @@ export class App extends Component {
           onkeydown={this.keyDownHandler}
           onselect={this.selectHandler}
           cursor={this.state.cursor}
+          onhover={this.state.hoverHandler}
           />
         { definition }
       </div>

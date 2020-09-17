@@ -1,16 +1,29 @@
+/*
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 1 }
+}
+*/
+
 .defBox {
-    max-width: 500px;
+    max-width: 800px;
     margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.18);
     padding: 20px;
+    z-index: -1;
 }
 
 .defBox h1 {
     margin: 5px 0;
-    font-size: 50px;
+    font-size: 70px;
+    color: rgb(33, 90, 165);
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    position: relative;
 }
 
 .defBox p {
-    line-height: 1.3;
+    line-height: 1.4;
+    font-size: 20px;
 }

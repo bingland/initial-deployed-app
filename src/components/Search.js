@@ -14,7 +14,7 @@ const Search = (props) => {
                     <div className="autoItems">
                         {
                             props.auto.map((item, key) => {
-                                return (<div className={props.cursor === key ? 'autoItem selected' : 'autoItem'} key={key} onClick={props.onselect}>{item}</div>)
+                                return (<div className={props.cursor === key ? 'autoItem selected' : 'autoItem'} key={key} onMouseEnter={props.onhover} onMouseDown={() => props.onselect(item)}>{item}</div>)
                             })
                         }
                     </div>
